@@ -4,100 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mr. Nice Guy | Node Packs</title>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <style>
         body { 
             background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80'); 
             background-size: cover; background-position: center; background-attachment: fixed;
-            color: white; font-family: 'Courier New', Courier, monospace; 
+            color: white; font-family: 'Segoe UI', Tahoma, sans-serif; 
             display: flex; flex-direction: column; align-items: center; padding: 40px 20px; margin: 0;
         }
-        body::before { content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8); z-index: -1; }
+        body::before { content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.7); z-index: -1; }
         
-        /* The Evil Header */
-        .evil-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+        /* The "Runtoe" Scratch Font Header */
         .evil-text {
-            font-family: 'Creepster', cursive;
-            font-size: 3.5rem; color: #ff0000; margin: 0;
-            text-shadow: 0px 0px 20px rgba(255, 0, 0, 0.8), 2px 2px 2px black;
-            letter-spacing: 3px;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 3.2rem; color: #ff4d4d; text-align: center; margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0px #000;
         }
-        .sub-text { 
-            color: #666; font-size: 1rem; text-transform: uppercase; letter-spacing: 5px; margin-top: 10px;
-        }
+        .sub-text { color: #888; margin-bottom: 40px; font-style: italic; }
 
-        /* Card Container */
-        .card-container { display: flex; flex-direction: column; gap: 40px; width: 100%; align-items: center; }
+        .card-container { display: flex; flex-direction: column; gap: 30px; width: 100%; align-items: center; }
         
-        .card { 
-            background-color: rgba(10, 10, 10, 0.95); 
-            width: 100%; max-width: 350px; 
-            border-radius: 0px; /* Sharp edges look more "evil" */
-            text-align: center; 
-            overflow: hidden; 
-            border: 1px solid #440000;
-            transition: 0.3s;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
-        }
-
-        /* Shake effect on hover */
-        .card:hover { 
-            transform: scale(1.02);
-            border: 1px solid #ff0000;
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
-        }
-
-        .header { padding: 30px 20px; border-bottom: 1px solid #222; }
-        .title { color: #5d87ff; font-size: 1.5rem; font-weight: bold; font-family: 'Creepster', cursive; letter-spacing: 1px; }
+        /* Bringing back the professional dark colors you liked */
+        .card { background-color: rgba(36, 39, 49, 0.95); width: 100%; max-width: 350px; border-radius: 12px; text-align: center; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); }
         
-        .price { 
-            background-color: #000; padding: 20px; color: #ff0000; 
-            font-size: 2.5rem; font-weight: bold; 
-            font-family: 'Courier New', monospace;
-            border-bottom: 1px solid #222;
-        }
+        .header { padding: 25px; }
+        .title { color: #5d87ff; font-size: 1.4rem; font-weight: bold; font-family: 'Permanent Marker', cursive; }
         
-        .features { padding: 30px; font-size: 0.9rem; color: #888; line-height: 2; }
+        /* High Contrast Price Bar */
+        .price { background-color: #1a1c23; padding: 15px; color: #ff6b6b; font-size: 2.2rem; font-weight: bold; border-top: 1px solid #333; border-bottom: 1px solid #333; }
         
-        .purchase-box { padding: 25px; display: flex; flex-direction: column; gap: 15px; align-items: center; background: #0a0a0a; }
+        .features { padding: 25px; font-size: 0.95rem; color: #ccc; line-height: 1.8; }
         
-        /* Buttons */
-        .btn-wa { 
-            background-color: #ff0000; color: white; padding: 12px 0; 
-            text-decoration: none; width: 90%; font-weight: bold; 
-            text-transform: uppercase; letter-spacing: 2px;
-            transition: 0.3s;
-        }
-        .btn-wa:hover { background-color: #990000; }
+        /* The Blue/Green Button Combo you liked */
+        .purchase-box { background-color: #a5b4fc; padding: 20px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
         
-        .btn-alt { 
-            color: #444; text-decoration: none; font-size: 0.8rem; 
-            text-transform: uppercase; letter-spacing: 2px;
-        }
-        .btn-alt:hover { color: #ff0000; }
+        .btn-wa { background-color: #25D366; color: white; padding: 12px 30px; border-radius: 8px; font-weight: bold; text-decoration: none; width: 85%; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        
+        .btn-alt { color: #2d2d2d; text-decoration: none; font-size: 0.9rem; font-weight: bold; margin-top: 5px; }
     </style>
 </head>
 <body>
 
-    <div class="evil-header">
-        <h1 class="evil-text">LET'S CHANGE THE FEATURES</h1>
-        <div class="sub-text">Managed by Mr. Nice Guy😎</div>
-    </div>
+    <h1 class="evil-text">Let's change the features</h1>
+    <p class="sub-text">Managed by Mr. Nice Guy😎</p>
 
     <div class="card-container">
         <div class="card">
             <div class="header"><div class="title">Node Starter</div></div>
             <div class="price">$3</div>
-            <div class="features">
-                [+] 200 BYTES<br>
-                [+] 50 BONUS BYTES<br>
-                [+] STANDARD NODE 🟢
-            </div>
+            <div class="features">200 bytes (+50 bonus)<br>Standard Node 🟢</div>
             <div class="purchase-box">
-                <a href="https://wa.me/254768946798?text=I%20want%20the%20$3%20Starter%20Pack" class="btn-wa">Order via WhatsApp</a>
+                <a href="https://wa.me/254768946798?text=I%20want%20to%20order%20the%20$3%20Starter%20Pack" class="btn-wa">Order via WhatsApp</a>
                 <a href="#" class="btn-alt">Instant Purchase</a>
             </div>
         </div>
@@ -105,13 +63,9 @@
         <div class="card">
             <div class="header"><div class="title">Professional Bot</div></div>
             <div class="price">$5</div>
-            <div class="features">
-                [+] 500 BYTES<br>
-                [+] 100 BONUS BYTES<br>
-                [+] ENHANCED NODE 🟡
-            </div>
+            <div class="features">500 bytes (+100 bonus)<br>Enhanced Node 🟡</div>
             <div class="purchase-box">
-                <a href="https://wa.me/254768946798?text=I%20want%20the%20$5%20Pro%20Pack" class="btn-wa">Order via WhatsApp</a>
+                <a href="https://wa.me/254768946798?text=I%20want%20to%20order%20the%20$5%20Pro%20Pack" class="btn-wa">Order via WhatsApp</a>
                 <a href="#" class="btn-alt">Instant Purchase</a>
             </div>
         </div>
@@ -119,18 +73,14 @@
         <div class="card">
             <div class="header"><div class="title">Pro Bot Master</div></div>
             <div class="price">$8</div>
-            <div class="features">
-                [+] 1200 BYTES<br>
-                [+] 300 BONUS BYTES<br>
-                [+] CLUSTERED NODE 🟠
-            </div>
+            <div class="features">1200 bytes (+300 bonus)<br>Clustered Node 🟠</div>
             <div class="purchase-box">
-                <a href="https://wa.me/254768946798?text=I%20want%20the%20$8%20Master%20Pack" class="btn-wa">Order via WhatsApp</a>
+                <a href="https://wa.me/254768946798?text=I%20want%20to%20order%20the%20$8%20Master%20Pack" class="btn-wa">Order via WhatsApp</a>
                 <a href="#" class="btn-alt">Instant Purchase</a>
             </div>
         </div>
     </div>
 
 </body>
-                </html>
+    </html>
                     
