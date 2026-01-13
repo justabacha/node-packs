@@ -14,34 +14,44 @@
         }
         body::before { content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.7); z-index: -1; }
         
-        /* The "Runtoe" Scratch Font Header */
+        /* Multi-Color Runtoe Font Header */
         .evil-text {
             font-family: 'Permanent Marker', cursive;
-            font-size: 3.2rem; color: #ff4d4d; text-align: center; margin: 0;
-            letter-spacing: 2px;
-            text-shadow: 3px 3px 0px #000;
+            font-size: 3.2rem; 
+            background: linear-gradient(to right, #ff4d4d, #f9cb28, #5d87ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center; margin: 0;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
         }
         .sub-text { color: #888; margin-bottom: 40px; font-style: italic; }
 
         .card-container { display: flex; flex-direction: column; gap: 30px; width: 100%; align-items: center; }
         
-        /* Bringing back the professional dark colors you liked */
-        .card { background-color: rgba(36, 39, 49, 0.95); width: 100%; max-width: 350px; border-radius: 12px; text-align: center; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); }
+        /* Deep Blue Card Background */
+        .card { 
+            background-color: #0a192f; /* Deep Navy/Midnight Blue */
+            width: 100%; max-width: 350px; 
+            border-radius: 12px; text-align: center; overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
+            border: 1px solid rgba(93, 135, 255, 0.2); 
+        }
         
         .header { padding: 25px; }
         .title { color: #5d87ff; font-size: 1.4rem; font-weight: bold; font-family: 'Permanent Marker', cursive; }
         
         /* High Contrast Price Bar */
-        .price { background-color: #1a1c23; padding: 15px; color: #ff6b6b; font-size: 2.2rem; font-weight: bold; border-top: 1px solid #333; border-bottom: 1px solid #333; }
+        .price { background-color: #112240; padding: 15px; color: #ff6b6b; font-size: 2.2rem; font-weight: bold; border-top: 1px solid #1d2d50; border-bottom: 1px solid #1d2d50; }
         
-        .features { padding: 25px; font-size: 0.95rem; color: #ccc; line-height: 1.8; }
+        .features { padding: 25px; font-size: 0.95rem; color: #cbd5e0; line-height: 1.8; }
         
-        /* The Blue/Green Button Combo you liked */
-        .purchase-box { background-color: #a5b4fc; padding: 20px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+        /* High-Visibility Purchase Box */
+        .purchase-box { background-color: #5d87ff; padding: 20px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
         
-        .btn-wa { background-color: #25D366; color: white; padding: 12px 30px; border-radius: 8px; font-weight: bold; text-decoration: none; width: 85%; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .btn-wa { background-color: #25D366; color: white; padding: 12px 30px; border-radius: 8px; font-weight: bold; text-decoration: none; width: 85%; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: 0.3s; }
+        .btn-wa:hover { transform: scale(1.05); background-color: #1ebe57; }
         
-        .btn-alt { color: #2d2d2d; text-decoration: none; font-size: 0.9rem; font-weight: bold; margin-top: 5px; }
+        .btn-alt { color: #ffffff; text-decoration: none; font-size: 0.9rem; font-weight: bold; margin-top: 5px; opacity: 0.8; }
     </style>
 </head>
 <body>
@@ -55,7 +65,7 @@
             <div class="price">$3</div>
             <div class="features">200 bytes (+50 bonus)<br>Standard Node 🟢</div>
             <div class="purchase-box">
-                <a href="https://wa.me/254768946798?text=I%20want%20to%20order%20the%20$3%20Starter%20Pack" class="btn-wa">Order via WhatsApp</a>
+                <a href="https://wa.me/254768946798?text=Hello%20Mr.%20Nice%20Guy,%20I%20want%20to%20order%20the%20$3%20Node%20Starter%20Pack" class="btn-wa">Order via WhatsApp</a>
                 <a href="#" class="btn-alt">Instant Purchase</a>
             </div>
         </div>
@@ -65,7 +75,7 @@
             <div class="price">$5</div>
             <div class="features">500 bytes (+100 bonus)<br>Enhanced Node 🟡</div>
             <div class="purchase-box">
-                <a href="https://wa.me/254768946798?text=I%20want%20to%20order%20the%20$5%20Pro%20Pack" class="btn-wa">Order via WhatsApp</a>
+                <a href="https://wa.me/254768946798?text=Hello%20Mr.%20Nice%20Guy,%20I%20want%20to%20order%20the%20$5%20Professional%20Bot%20Pack" class="btn-wa">Order via WhatsApp</a>
                 <a href="#" class="btn-alt">Instant Purchase</a>
             </div>
         </div>
@@ -75,7 +85,7 @@
             <div class="price">$8</div>
             <div class="features">1200 bytes (+300 bonus)<br>Clustered Node 🟠</div>
             <div class="purchase-box">
-                <a href="https://wa.me/254768946798?text=I%20want%20to%20order%20the%20$8%20Master%20Pack" class="btn-wa">Order via WhatsApp</a>
+                <a href="https://wa.me/254768946798?text=Hello%20Mr.%20Nice%20Guy,%20I%20want%20to%20order%20the%20$8%20Pro%20Bot%20Master%20Pack" class="btn-wa">Order via WhatsApp</a>
                 <a href="#" class="btn-alt">Instant Purchase</a>
             </div>
         </div>
@@ -83,4 +93,4 @@
 
 </body>
     </html>
-                    
+    
