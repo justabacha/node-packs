@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { background-color: #1a1c23; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px; }
+        .card { background-color: #242731; width: 90%; max-width: 350px; border-radius: 8px; text-align: center; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .header { padding: 20px; }
+        .title { color: #5d87ff; font-size: 1.2rem; font-weight: bold; }
+        .credits { font-size: 0.9rem; color: #b5b5b5; margin-top: 5px; }
+        .price { background-color: #2a2d37; padding: 15px; color: #ff6b6b; font-size: 1.5rem; font-weight: bold; border-top: 1px solid #333; border-bottom: 1px solid #333; }
+        .features { padding: 20px; font-size: 0.85rem; color: #ccc; line-height: 1.8; }
+        .purchase-box { background-color: #a5b4fc; padding: 25px; }
+        .btn { background-color: #2d2d2d; color: white; border: none; padding: 10px 30px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header"><div class="title">Node Starter</div><div class="credits">200 credits (+50 bonus)</div></div>
+        <div class="price">$3</div>
+        <div class="features">Node.js Bots 🤖<br>Basic Support 💻<br>Standard Node 🟢</div>
+        <div class="purchase-box"><button class="btn">Purchase</button></div>
+    </div>
+    <div class="card">
+        <div class="header"><div class="title">Professional Bot</div><div class="credits">500 credits (+100 bonus)</div></div>
+        <div class="price">$5</div>
+        <div class="features">Pro Bot 🤖<br>Priority Support 🛠️<br>Enhanced Node 🟡</div>
+        <div class="purchase-box"><button class="btn">Purchase</button></div>
+    </div>
+    <div class="card">
+        <div class="header"><div class="title">Pro Bot Master</div><div class="credits">1200 credits (+300 bonus)</div></div>
+        <div class="price">$8</div>
+        <div class="features">Unlimited Bots 🤖<br>24/7 Support 🌟<br>Clustered Node 🟠</div>
+        <div class="purchase-box"><button class="btn">Purchase</button></div>
+    </div>
+</body>
+</html>
