@@ -13,52 +13,17 @@
             display: flex; flex-direction: column; align-items: center; padding: 40px 20px; margin: 0;
         }
         body::before { content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.75); z-index: -1; }
-        
-        .evil-text {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 3.5rem; 
-            background: linear-gradient(45deg, #ff4d4d, #f9cb28, #5d87ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center; margin: 0;
-            filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.8));
-        }
+        .evil-text { font-family: 'Luckiest Guy', cursive; font-size: 3.5rem; background: linear-gradient(45deg, #ff4d4d, #f9cb28, #5d87ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; margin: 0; filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.8)); }
         .sub-text { color: #888; margin-bottom: 40px; font-style: italic; letter-spacing: 1px; }
-
         .card-container { display: flex; flex-direction: column; gap: 30px; width: 100%; align-items: center; }
-        
-        .card { 
-            background-color: #0a192f; 
-            width: 100%; max-width: 350px; 
-            border-radius: 15px; text-align: center; overflow: hidden; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.7); 
-            border: 1px solid rgba(93, 135, 255, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .card:hover { transform: translateY(-10px); }
-        
+        .card { background-color: #0a192f; width: 100%; max-width: 350px; border-radius: 15px; text-align: center; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.7); border: 1px solid rgba(93, 135, 255, 0.1); transition: transform 0.3s ease; }
         .header { padding: 25px; }
         .title { color: #5d87ff; font-size: 1.6rem; font-family: 'Permanent Marker', cursive; }
-        
-        .price { 
-            background-color: #112240; padding: 15px; color: #ff6b6b; 
-            font-size: 2.5rem; font-weight: bold; 
-            border-top: 1px solid #1d2d50; border-bottom: 1px solid #1d2d50;
-        }
-        
+        .price { background-color: #112240; padding: 15px; color: #ff6b6b; font-size: 2.5rem; font-weight: bold; border-top: 1px solid #1d2d50; border-bottom: 1px solid #1d2d50; }
         .features { padding: 25px; font-size: 1rem; color: #cbd5e0; line-height: 2; }
-        
         .purchase-box { background-color: #5d87ff; padding: 25px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
-        
-        .btn-wa { 
-            background-color: #25D366; color: white; padding: 14px 0; 
-            border-radius: 10px; font-weight: bold; text-decoration: none; 
-            width: 90%; text-align: center; font-size: 1.1rem;
-            transition: 0.3s;
-        }
-        .btn-wa:hover { background-color: #1ebe57; transform: scale(1.05); }
-        
-        .btn-alt { color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.9; }
+        .btn-wa { background-color: #25D366; color: white; padding: 14px 0; border-radius: 10px; font-weight: bold; text-decoration: none; width: 90%; text-align: center; font-size: 1.1rem; transition: 0.3s; }
+        .btn-alt { color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.9; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -72,8 +37,8 @@
             <div class="price">$2</div>
             <div class="features">150 bytes (+30 bonus)<br>Standard Node &#128994;<br>Basic Support &#9889;</div>
             <div class="purchase-box">
-                <a href="https://wa.me/254768946798?text=Hello%20Mr.%20Nice%20Guy,%20I%20want%20to%20order%20the%20$2%20Node%20Starter" class="btn-wa">Order via WhatsApp</a>
-                <a href="#" class="btn-alt">Instant Purchase</a>
+                <a href="https://wa.me/254768946798?text=Hello%20Festone,%20I%20want%20to%20order%20the%20$2%20Node%20Starter" class="btn-wa">Order via WhatsApp</a>
+                <a href="pay.html" class="btn-alt">Instant Purchase (M-Pesa)</a>
             </div>
         </div>
 
@@ -82,8 +47,8 @@
             <div class="price">$3</div>
             <div class="features">400 bytes (+80 bonus)<br>Enhanced Node &#128993;<br>Priority Support &#127775;</div>
             <div class="purchase-box">
-                <a href="https://wa.me/254768946798?text=Hello%20Mr.%20Nice%20Guy,%20I%20want%20to%20order%20the%20$3%20Professional%20Bot" class="btn-wa">Order via WhatsApp</a>
-                <a href="#" class="btn-alt">Instant Purchase</a>
+                <a href="https://wa.me/254768946798?text=Hello%20Festone,%20I%20want%20to%20order%20the%20$3%20Professional%20Bot" class="btn-wa">Order via WhatsApp</a>
+                <a href="pay.html" class="btn-alt">Instant Purchase (M-Pesa)</a>
             </div>
         </div>
 
@@ -92,8 +57,8 @@
             <div class="price">$5</div>
             <div class="features">1000 bytes (+250 bonus)<br>Clustered Node &#128992;<br>24/7 VIP Support &#128142;</div>
             <div class="purchase-box">
-                <a href="https://wa.me/254768946798?text=Hello%20Mr.%20Nice%20Guy,%20I%20want%20to%20order%20the%20$5%20Pro%20Bot%20Master" class="btn-wa">Order via WhatsApp</a>
-                <a href="#" class="btn-alt">Instant Purchase</a>
+                <a href="https://wa.me/254768946798?text=Hello%20Festone,%20I%20want%20to%20order%20the%20$5%20Pro%20Bot%20Master" class="btn-wa">Order via WhatsApp</a>
+                <a href="pay.html" class="btn-alt">Instant Purchase (M-Pesa)</a>
             </div>
         </div>
     </div>
