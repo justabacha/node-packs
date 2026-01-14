@@ -30,14 +30,30 @@
             border-radius: 8px; 
             cursor: pointer; 
             font-size: 1.2rem;
-            transition: 0.2s;
         }
-        .copy-icon:active { background: #5d87ff; transform: scale(0.9); }
 
         .paybill-steps { font-size: 0.85rem; color: #8892b0; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); line-height: 1.5; }
         
-        .instant-btn { display: block; background: linear-gradient(45deg, #5d87ff, #b16bff); color: white; text-decoration: none; padding: 18px; border-radius: 12px; font-weight: bold; font-size: 1.1rem; margin-top: 25px; font-family: 'Luckiest Guy', cursive; transition: 0.3s; box-shadow: 0 10px 20px rgba(93, 135, 255, 0.2); }
-        .instant-btn:active { transform: scale(0.98); filter: brightness(1.1); }
+        /* THE NEW SMART BUTTON */
+        .instant-btn { 
+            display: block; 
+            background: linear-gradient(45deg, #25D366, #128C7E); 
+            color: white; 
+            text-decoration: none; 
+            padding: 18px; 
+            border-radius: 12px; 
+            font-weight: bold; 
+            font-size: 1.1rem; 
+            margin-top: 25px; 
+            font-family: 'Luckiest Guy', cursive; 
+            cursor: pointer;
+            border: none;
+            width: 100%;
+        }
+        
+        /* Hidden guide that appears after clicking */
+        #mpesa-guide { display: none; background: #07101d; padding: 15px; border-radius: 10px; margin-top: 15px; text-align: left; border-left: 4px solid #25D366; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
@@ -64,32 +80,36 @@
                 Acc: 0051060112978
             </div>
             <div class="copy-icon" onclick="copyText('0051060112978')">📑</div>
-            <div class="paybill-steps">
-                <b>Steps:</b> Lipa na M-Pesa > Paybill > Biz: <b>200999</b> > Acc: <b>0051060112978</b>
-            </div>
         </div>
 
-        <a href="intent://#Intent;scheme=smsto;K.sms_body=PAY%20200999%20ACC%200051060112978;end" class="instant-btn" onclick="openMpesa()">🚀 OPEN M-PESA APP</a>
+        <button class="instant-btn" onclick="startPayment()">🚀 COPY ACC & PAY</button>
+
+        <div id="mpesa-guide">
+            <b style="color: #25D366;">Account Copied! Now:</b><br>
+            1. Open M-Pesa Menu<br>
+            2. Lipa na M-Pesa > Paybill<br>
+            3. Biz: <b>200999</b> | Acc: <b>PASTE</b>
+        </div>
         
-        <p style="font-size: 0.75rem; color: #8892b0; margin-top: 15px;">Number copies automatically. Paste in M-Pesa menu.</p>
+        <p style="font-size: 0.75rem; color: #8892b0; margin-top: 15px;">Send screenshot to WhatsApp after paying.</p>
     </div>
 
     <script>
         function copyText(text) {
             navigator.clipboard.writeText(text);
-            alert("Number copied to clipboard: " + text);
+            alert("Copied: " + text);
         }
 
-        function openMpesa() {
-            // Automatically copy the account number so they just have to paste it
+        function startPayment() {
+            // Copy the bank account
             navigator.clipboard.writeText('0051060112978');
-            
-            setTimeout(function() {
-                alert("Account 0051060112978 copied! Please paste it in the M-Pesa Paybill section.");
-            }, 500);
+            // Show the guide
+            document.getElementById('mpesa-guide').style.display = 'block';
+            // Scroll to the guide
+            window.scrollTo(0, document.body.scrollHeight);
         }
     </script>
 
 </body>
-    </html>
-    
+                </html>
+                
