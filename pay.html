@@ -18,7 +18,6 @@
         .method-title { font-weight: bold; color: #ff6b6b; display: block; margin-bottom: 4px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
         .details { font-family: 'Courier New', monospace; color: #cbd5e0; font-size: 1.05rem; line-height: 1.4; padding-right: 45px; }
         
-        /* Badge on its own line */
         .free-badge { color: #25D366; font-size: 0.7rem; font-weight: bold; border: 1px solid #25D366; padding: 1px 6px; border-radius: 4px; display: inline-block; margin-bottom: 10px; text-transform: uppercase; }
 
         .copy-icon { 
@@ -38,6 +37,7 @@
         .paybill-steps { font-size: 0.85rem; color: #8892b0; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); line-height: 1.5; }
         
         .instant-btn { display: block; background: linear-gradient(45deg, #5d87ff, #b16bff); color: white; text-decoration: none; padding: 18px; border-radius: 12px; font-weight: bold; font-size: 1.1rem; margin-top: 25px; font-family: 'Luckiest Guy', cursive; transition: 0.3s; box-shadow: 0 10px 20px rgba(93, 135, 255, 0.2); }
+        .instant-btn:active { transform: scale(0.98); filter: brightness(1.1); }
     </style>
 </head>
 <body>
@@ -69,15 +69,24 @@
             </div>
         </div>
 
-        <a href="#" class="instant-btn">🚀 AUTO M-PESA PUSH</a>
+        <a href="intent://#Intent;scheme=smsto;K.sms_body=PAY%20200999%20ACC%200051060112978;end" class="instant-btn" onclick="openMpesa()">🚀 OPEN M-PESA APP</a>
         
-        <p style="font-size: 0.75rem; color: #8892b0; margin-top: 15px;">Send a screenshot via WhatsApp for instant activation.</p>
+        <p style="font-size: 0.75rem; color: #8892b0; margin-top: 15px;">Number copies automatically. Paste in M-Pesa menu.</p>
     </div>
 
     <script>
         function copyText(text) {
             navigator.clipboard.writeText(text);
-            alert("Copied: " + text);
+            alert("Number copied to clipboard: " + text);
+        }
+
+        function openMpesa() {
+            // Automatically copy the account number so they just have to paste it
+            navigator.clipboard.writeText('0051060112978');
+            
+            setTimeout(function() {
+                alert("Account 0051060112978 copied! Please paste it in the M-Pesa Paybill section.");
+            }, 500);
         }
     </script>
 
