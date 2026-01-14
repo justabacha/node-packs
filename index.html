@@ -7,51 +7,98 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Permanent+Marker&display=swap" rel="stylesheet">
     <style>
         body { 
-            /* New Vibrant Cyberpunk Background */
-            background-image: url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1920&q=80'); 
+            background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80'); 
             background-size: cover; background-position: center; background-attachment: fixed;
             color: white; font-family: 'Segoe UI', sans-serif; 
             display: flex; flex-direction: column; align-items: center; padding: 40px 20px; margin: 0;
         }
-        /* Dark overlay to make cards pop */
-        body::before { content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.65); z-index: -1; }
+        body::before { content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.75); z-index: -1; }
         
         .evil-text {
             font-family: 'Luckiest Guy', cursive; /* Updated Font */
             font-size: 3.5rem; 
-            background: linear-gradient(45deg, #00f2fe, #4facfe, #7000ff);
+            background: linear-gradient(45deg, #ff4d4d, #f9cb28, #5d87ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-align: center; margin: 0;
-            filter: drop-shadow(0 0 10px rgba(79, 172, 254, 0.8));
+            filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.8));
             letter-spacing: 2px;
-            text-transform: uppercase;
         }
-        .sub-text { color: #aaa; margin-bottom: 40px; font-style: italic; letter-spacing: 2px; font-weight: bold; }
+        .sub-text { color: #888; margin-bottom: 40px; font-style: italic; letter-spacing: 1px; }
 
         .card-container { display: flex; flex-direction: column; gap: 30px; width: 100%; align-items: center; }
         
-        /* Deep Blue Metallic Card Style */
         .card { 
-            background-color: #0d1117; 
+            background-color: #0a192f; 
             width: 100%; max-width: 350px; 
-            border-radius: 20px; text-align: center; overflow: hidden; 
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.2); 
-            border: 1px solid rgba(0, 242, 254, 0.3);
-            transition: 0.3s;
+            border-radius: 15px; text-align: center; overflow: hidden; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.7); 
+            border: 1px solid rgba(93, 135, 255, 0.1);
+            transition: transform 0.3s ease;
         }
-        .card:hover { transform: translateY(-10px); border-color: #00f2fe; box-shadow: 0 0 30px rgba(0, 242, 254, 0.5); }
+        .card:hover { transform: translateY(-10px); }
         
-        .header { padding: 20px; background: rgba(255, 255, 255, 0.05); }
-        .title { color: #00f2fe; font-size: 1.6rem; font-family: 'Permanent Marker', cursive; }
+        .header { padding: 25px; }
+        .title { color: #5d87ff; font-size: 1.6rem; font-family: 'Permanent Marker', cursive; }
         
         .price { 
-            background-color: #161b22; padding: 15px; color: #ff0055; 
-            font-size: 2.8rem; font-weight: bold; font-family: 'Luckiest Guy', cursive;
-            text-shadow: 0 0 10px rgba(255, 0, 85, 0.4);
+            background-color: #112240; padding: 15px; color: #ff6b6b; 
+            font-size: 2.5rem; font-weight: bold; 
+            border-top: 1px solid #1d2d50; border-bottom: 1px solid #1d2d50;
         }
         
-        .features { padding: 25px; font-size: 1rem; color: #e6edf3; line-height: 2.2; }
+        .features { padding: 25px; font-size: 1rem; color: #cbd5e0; line-height: 2; }
         
-        .purchase-box { background-color: #0d111
+        .purchase-box { background-color: #5d87ff; padding: 25px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
         
+        .btn-wa { 
+            background-color: #25D366; color: white; padding: 14px 0; 
+            border-radius: 10px; font-weight: bold; text-decoration: none; 
+            width: 90%; text-align: center; font-size: 1.1rem;
+            transition: 0.3s;
+        }
+        .btn-wa:hover { background-color: #1ebe57; transform: scale(1.05); }
+        
+        .btn-alt { color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.9; }
+    </style>
+</head>
+<body>
+
+    <h1 class="evil-text">NODE PACKS</h1>
+    <p class="sub-text">Managed by Mr. Nice Guy 😎</p>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="header"><div class="title">Starter Pack</div></div>
+            <div class="price">$2</div>
+            <div class="features">150 bytes (+30 bonus)<br>Standard Node 🟢<br>Basic Support</div>
+            <div class="purchase-box">
+                <a href="https://wa.me/254768946798?text=Hello%20Mr.%20Nice%20Guy,%20I%20want%20to%20order%20the%20$2%20Starter%20Pack" class="btn-wa">Order via WhatsApp</a>
+                <a href="#" class="btn-alt">Instant Purchase</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="header"><div class="title">Advanced Bot</div></div>
+            <div class="price">$3</div>
+            <div class="features">400 bytes (+80 bonus)<br>Enhanced Node 🟡<br>Priority Support</div>
+            <div class="purchase-box">
+                <a href="https://wa.me/254768946798?text=Hello%20Mr.%20Nice%20Guy,%20I%20want%20to%20order%20the%20$3%20Advanced%20Bot%20Pack" class="btn-wa">Order via WhatsApp</a>
+                <a href="#" class="btn-alt">Instant Purchase</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="header"><div class="title">VIP Master</div></div>
+            <div class="price">$5</div>
+            <div class="features">1000 bytes (+250 bonus)<br>Clustered Node 🟠<br>24/7 VIP Support</div>
+            <div class="purchase-box">
+                <a href="https://wa.me/254768946798?text=Hello%20Mr.%20Nice%20Guy,%20I%20want%20to%20order%20the%20$5%20VIP%20Master%20Pack" class="btn-wa">Order via WhatsApp</a>
+                <a href="#" class="btn-alt">Instant Purchase</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+            </html>
+    
