@@ -15,15 +15,16 @@
         h2 { font-family: 'Luckiest Guy', cursive; color: #5d87ff; margin: 10px 0; font-size: 1.6rem; letter-spacing: 1px; }
         
         .method { background: #0a192f; padding: 18px; border-radius: 12px; margin-bottom: 15px; text-align: left; border: 1px solid rgba(93, 135, 255, 0.1); position: relative; }
-        .method-title { font-weight: bold; color: #ff6b6b; display: block; margin-bottom: 8px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        .method-title { font-weight: bold; color: #ff6b6b; display: block; margin-bottom: 4px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
         .details { font-family: 'Courier New', monospace; color: #cbd5e0; font-size: 1.05rem; line-height: 1.4; padding-right: 45px; }
         
-        .free-badge { color: #25D366; font-size: 0.75rem; font-weight: bold; margin-left: 5px; border: 1px solid #25D366; padding: 2px 5px; border-radius: 4px; }
+        /* Badge on its own line */
+        .free-badge { color: #25D366; font-size: 0.7rem; font-weight: bold; border: 1px solid #25D366; padding: 1px 6px; border-radius: 4px; display: inline-block; margin-bottom: 10px; text-transform: uppercase; }
 
         .copy-icon { 
             position: absolute; 
             right: 15px; 
-            top: 25px; /* Pushed up as requested */
+            top: 20px; 
             background: rgba(93, 135, 255, 0.1); 
             border: 1px solid rgba(93, 135, 255, 0.3);
             padding: 8px; 
@@ -56,11 +57,11 @@
         </div>
 
         <div class="method">
-            <span class="method-title">2. M-Pesa to Postbank <span class="free-badge">FREE TRANSFER</span></span>
+            <span class="method-title">2. M-Pesa to Postbank</span>
+            <span class="free-badge">✔ FREE TRANSFER</span>
             <div class="details">
                 Paybill: <span style="color:#5d87ff">200999</span><br>
-                Acc: 0051060112978<br>
-                Name: Festone Owino
+                Acc: 0051060112978
             </div>
             <div class="copy-icon" onclick="copyText('0051060112978')">📑</div>
             <div class="paybill-steps">
@@ -81,4 +82,5 @@
     </script>
 
 </body>
-</html>
+    </html>
+    
