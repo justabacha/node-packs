@@ -3,88 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Portal | Festone Owino</title>
+    <title>Secure Pay | Festone Owino</title>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #0a192f;
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
-        .pay-card {
-            background: #112240;
-            width: 100%;
-            max-width: 400px;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            border: 1px solid rgba(93, 135, 255, 0.2);
-        }
+        body { background-color: #0a192f; color: white; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
+        .pay-card { background: #112240; width: 100%; max-width: 400px; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 1px solid rgba(93, 135, 255, 0.2); }
+        .img-container { position: relative; width: 100px; height: 100px; margin: 0 auto 15px auto; }
+        .profile-pic { width: 100%; height: 100%; border-radius: 50%; border: 3px solid #5d87ff; object-fit: cover; }
+        .status-dot { position: absolute; bottom: 5px; right: 5px; width: 15px; height: 15px; background-color: #25D366; border: 2px solid #112240; border-radius: 50%; box-shadow: 0 0 10px #25D366; }
         
-        .img-container {
-            position: relative;
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 15px auto;
-        }
-        .profile-pic {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 3px solid #5d87ff;
-            object-fit: cover;
-        }
-        .status-dot {
-            position: absolute;
-            bottom: 5px;
-            right: 10px;
-            width: 18px;
-            height: 18px;
-            background-color: #25D366;
-            border: 3px solid #112240;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #25D366;
-        }
-
-        h2 { font-family: 'Luckiest Guy', cursive; color: #5d87ff; margin: 10px 0 5px 0; font-size: 1.8rem; letter-spacing: 1px; }
-        .verified-text { color: #25D366; font-size: 0.8rem; font-weight: bold; margin-bottom: 25px; display: block; letter-spacing: 2px; }
-
-        .method {
-            background: #0a192f;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            text-align: left;
-            border: 1px solid rgba(93, 135, 255, 0.1);
-        }
-        .method-title { font-weight: bold; color: #ff6b6b; display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; }
-        .details { font-family: 'Courier New', monospace; color: #cbd5e0; font-size: 1.05rem; line-height: 1.5; }
-        .highlight { color: #5d87ff; font-weight: bold; }
-
-        .instant-btn {
-            display: block;
-            background: linear-gradient(45deg, #5d87ff, #b16bff);
-            color: white;
-            text-decoration: none;
-            padding: 18px;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-top: 25px;
-            box-shadow: 0 10px 20px rgba(93, 135, 255, 0.3);
-            transition: 0.3s;
-            font-family: 'Luckiest Guy', cursive;
-        }
-        .instant-btn:hover { transform: scale(1.03); filter: brightness(1.1); }
+        h2 { font-family: 'Luckiest Guy', cursive; color: #5d87ff; margin: 10px 0; font-size: 1.6rem; }
         
-        .footer-note { margin-top: 20px; font-size: 0.75rem; color: #4b5563; line-height: 1.4; }
+        .method { background: #0a192f; padding: 15px; border-radius: 12px; margin-bottom: 15px; text-align: left; border: 1px solid rgba(93, 135, 255, 0.1); position: relative; }
+        .method-title { font-weight: bold; color: #ff6b6b; display: block; margin-bottom: 8px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        .details { font-family: 'Courier New', monospace; color: #cbd5e0; font-size: 1rem; line-height: 1.4; }
+        
+        /* Copy Button Style */
+        .copy-btn { position: absolute; right: 10px; top: 10px; background: #5d87ff; color: white; border: none; padding: 4px 8px; border-radius: 5px; font-size: 0.7rem; cursor: pointer; font-weight: bold; }
+        .copy-btn:active { transform: scale(0.9); }
+
+        .paybill-steps { font-size: 0.85rem; color: #8892b0; margin-top: 10px; padding-left: 15px; border-left: 2px solid #5d87ff; }
+        
+        .instant-btn { display: block; background: linear-gradient(45deg, #5d87ff, #b16bff); color: white; text-decoration: none; padding: 18px; border-radius: 12px; font-weight: bold; font-size: 1.1rem; margin-top: 25px; font-family: 'Luckiest Guy', cursive; transition: 0.3s; }
     </style>
 </head>
 <body>
@@ -96,33 +36,38 @@
         </div>
         
         <h2>PAY FESTONE OWINO</h2>
-        <span class="verified-text">● VERIFIED MERCHANT</span>
 
         <div class="method">
-            <span class="method-title">Option 1: M-Pesa (Send Money)</span>
-            <div class="details">
-                Number: <span class="highlight">0768 946 798</span><br>
-                Name: <span class="highlight">FESTONE OWINO</span>
-            </div>
+            <button class="copy-btn" onclick="copyText('0768946798')">COPY</button>
+            <span class="method-title">1. M-Pesa Send Money</span>
+            <div class="details">Number: 0768 946 798<br>Name: Festone Owino</div>
         </div>
 
         <div class="method">
-            <span class="method-title">Option 2: Postbank Transfer</span>
+            <button class="copy-btn" onclick="copyText('0051060112978')">COPY ACC</button>
+            <span class="method-title">2. Pay via M-Pesa to Bank</span>
             <div class="details">
-                Bank: <span class="highlight">POSTBANK KENYA</span><br>
-                Acc No: <span class="highlight">0051060112978</span><br>
-                Name: <span class="highlight">FESTONE OWINO</span>
+                Paybill: <span style="color:#5d87ff">200999</span> (Postbank)<br>
+                Acc No: 0051060112978
+            </div>
+            <div class="paybill-steps">
+                1. Lipa na M-Pesa > Paybill<br>
+                2. Enter Business No: <b>200999</b><br>
+                3. Enter Account No: <b>0051060112978</b>
             </div>
         </div>
 
-        <a href="#" class="instant-btn">🚀 INSTANT M-PESA PUSH</a>
+        <a href="#" class="instant-btn">🚀 AUTO M-PESA PUSH</a>
         
-        <div class="footer-note">
-            After payment, please send a <b>screenshot</b> to WhatsApp.<br>
-            Processing is instant once verified.
-        </div>
+        <p style="font-size: 0.7rem; color: #4b5563; margin-top: 15px;">Send screenshot to WhatsApp after manual payment.</p>
     </div>
 
+    <script>
+        function copyText(text) {
+            navigator.clipboard.writeText(text);
+            alert("Copied to clipboard: " + text);
+        }
+    </script>
+
 </body>
-  </html>
-  
+</html>
