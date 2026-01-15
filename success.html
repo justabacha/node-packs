@@ -10,41 +10,45 @@
         .success-card { background: #112240; width: 100%; max-width: 400px; border-radius: 20px; padding: 40px; border: 2px solid #25D366; box-shadow: 0 0 30px rgba(37, 211, 102, 0.2); }
         .icon { font-size: 50px; margin-bottom: 20px; }
         h1 { font-family: 'Luckiest Guy', cursive; color: #25D366; margin-bottom: 10px; }
-        .payment-info { background: #0a192f; padding: 15px; border-radius: 10px; margin: 20px 0; text-align: left; font-family: monospace; border: 1px solid #1d2d50; }
-        .wa-btn { display: block; background: #25D366; color: white; text-decoration: none; padding: 18px; border-radius: 12px; font-weight: bold; font-family: 'Luckiest Guy', cursive; transition: 0.3s; }
-        .wa-btn:hover { transform: scale(1.05); background: #128C7E; }
+        .payment-info { background: #0a192f; padding: 15px; border-radius: 10px; margin: 20px 0; text-align: left; font-family: monospace; border: 1px solid #1d2d50; font-size: 0.9rem; }
+        .wa-btn { display: block; background: #25D366; color: white; text-decoration: none; padding: 18px; border-radius: 12px; font-weight: bold; font-family: 'Luckiest Guy', cursive; transition: 0.3s; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); }
     </style>
 </head>
 <body>
     <div class="success-card">
         <div class="icon">🚀</div>
-        <h1>PAYMENT RECEIVED!</h1>
-        <p>Your payment was successful. Click below to send the details for instant activation.</p>
+        <h1>PAYMENT SENT!</h1>
+        <p>Your payment details are ready. Tap below to send them for instant activation.</p>
         
-        <div class="payment-info" id="detailsBox">
-            Ref: <span id="disp-id">Loading...</span><br>
+        <div class="payment-info">
+            Ref: <span id="disp-id">Pending...</span><br>
+            Tracking: <span id="disp-track">...</span><br>
             Amount: <span id="disp-amt">...</span>
         </div>
         
-        <a href="#" class="wa-btn" id="waLink">ACTIVATE ON WHATSAPP</a>
+        <a href="#" class="wa-btn" id="waLink">SEND PROOF ON WHATSAPP</a>
     </div>
 
     <script>
-        // Get details from the URL
+        // Get details from the URL sent by IntaSend
         const urlParams = new URLSearchParams(window.location.search);
-        const invoiceId = urlParams.get('invoice_id') || "MANUAL";
-        const trackingId = urlParams.get('tracking_id') || "N/A";
-        const amount = urlParams.get('amount') || "...";
+        const invoiceId = urlParams.get('invoice_id') || "Wait for Redirect";
+        const trackingId = urlParams.get('tracking_id') || "Processing";
+        const amount = urlParams.get('amount') || "0.00";
 
-        // Show them on screen
+        // Display them on the card
         document.getElementById('disp-id').innerText = invoiceId;
+        document.getElementById('disp-track').innerText = trackingId;
         document.getElementById('disp-amt').innerText = "$" + amount;
 
-        // Build the WhatsApp Link
+        // Build the New WhatsApp Message exactly as requested
         const phone = "254768946798";
-        const text = `Hello Festone! I have paid via M-Pesa/IntaSend.\n\nRef: ${invoiceId}\nTracking: ${trackingId}\nAmount: $${amount}\n\nPlease activate my Node Pack!`;
+        const welcome = "Hello Festone, I have paid via M-Pesa! here's my proof:";
+        const details = `\n\nRef: ${invoiceId}\nTracking: ${trackingId}\nAmount: $${amount}`;
+        const closing = `\n\nplease activate my pack`;
         
-        document.getElementById('waLink').href = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+        const fullMessage = encodeURIComponent(welcome + details + closing);
+        document.getElementById('waLink').href = `https://wa.me/${phone}?text=${fullMessage}`;
     </script>
 </body>
 </html>
