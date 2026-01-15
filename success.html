@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful | Mr. Nice Guy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #0a192f; color: white; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; text-align: center; }
+        .success-card { background: #112240; width: 100%; max-width: 400px; border-radius: 20px; padding: 40px; border: 2px solid #25D366; box-shadow: 0 0 30px rgba(37, 211, 102, 0.2); }
+        .icon { font-size: 50px; margin-bottom: 20px; }
+        h1 { font-family: 'Luckiest Guy', cursive; color: #25D366; margin-bottom: 10px; }
+        p { color: #8892b0; margin-bottom: 30px; line-height: 1.5; }
+        textarea { width: 90%; padding: 15px; border-radius: 10px; border: 1px solid #1d2d50; background: #0a192f; color: white; margin-bottom: 20px; font-size: 0.9rem; }
+        .wa-btn { display: block; background: #25D366; color: white; text-decoration: none; padding: 18px; border-radius: 12px; font-weight: bold; font-family: 'Luckiest Guy', cursive; }
+    </style>
+</head>
+<body>
+    <div class="success-card">
+        <div class="icon">✅</div>
+        <h1>PAYMENT SENT!</h1>
+        <p>Your payment is being processed. To speed up activation, paste your M-Pesa message below:</p>
+        
+        <textarea id="mpesaMsg" placeholder="Paste M-Pesa message here..."></textarea>
+        
+        <a href="#" class="wa-btn" onclick="sendToWA()">ACTIVATE ON WHATSAPP</a>
+    </div>
+
+    <script>
+        function sendToWA() {
+            const msg = document.getElementById('mpesaMsg').value;
+            const phone = "254768946798";
+            const encodedMsg = encodeURIComponent("Hello Festone, I have paid! Here is my proof:\n\n" + msg);
+            window.location.href = `https://wa.me/${phone}?text=${encodedMsg}`;
+        }
+    </script>
+</body>
+</html>
